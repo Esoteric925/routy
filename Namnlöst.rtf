@@ -1,0 +1,32 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fswiss\fcharset0 ArialMT;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720\sl360\partightenfactor0
+
+\f0\fs32 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 erl -sname amir@amir -setcookie routy1 -connect_all false\
+\
+routy:start(a, a).\
+routy:start(b, b).\
+routy:start(c, c).\
+routy:start(d, d).\
+\
+a ! \{add, b, \{b, 'amir@amir'\}\}.\
+b ! \{add, a, \{a, 'amir@amir'\}\}.\
+b ! \{add, c, \{c, 'amir@amir'\}\}.\
+b ! \{add, d, \{d, 'amir@amir'\}\}.\
+c ! \{add, b, \{b, 'amir@amir'\}\}.\
+d ! \{add, c, \{c, 'amir@amir'\}\}.\
+\
+a ! broadcast.\
+b ! broadcast.\
+c ! broadcast.\
+d ! broadcast.\
+\
+a ! update.\
+b ! update.\
+c ! update.\
+d ! update. \
+}
